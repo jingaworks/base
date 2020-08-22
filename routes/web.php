@@ -26,6 +26,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
     Route::resource('users', 'UsersController');
 
+    // Regions
+    Route::delete('regions/destroy', 'RegionController@massDestroy')->name('regions.massDestroy');
+    Route::resource('regions', 'RegionController');
+
+    // Places
+    Route::delete('places/destroy', 'PlaceController@massDestroy')->name('places.massDestroy');
+    Route::resource('places', 'PlaceController');
+
     // Profiles
     // Route::delete('profiles/destroy', 'ProfileController@massDestroy')->name('profiles.massDestroy');
     // Route::resource('profiles', 'ProfileController');
@@ -44,13 +52,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Route::post('products/ckmedia', 'ProductController@storeCKEditorImages')->name('products.storeCKEditorImages');
     // Route::resource('products', 'ProductController');
 
-    // Regions
-    // Route::delete('regions/destroy', 'RegionController@massDestroy')->name('regions.massDestroy');
-    // Route::resource('regions', 'RegionController');
-
-    // Places
-    // Route::delete('places/destroy', 'PlaceController@massDestroy')->name('places.massDestroy');
-    // Route::resource('places', 'PlaceController');
 
     // Addresses
     // Route::delete('addresses/destroy', 'AddressController@massDestroy')->name('addresses.massDestroy');
