@@ -131,6 +131,48 @@
                 </ul>
             </li>
         @endcan
+        @can('product_management_access')
+            <li class="c-sidebar-nav-dropdown">
+                <a class="c-sidebar-nav-dropdown-toggle" href="#">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.productManagement.title') }}
+                </a>
+                <ul class="c-sidebar-nav-dropdown-items">
+                    @can('category_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.categories.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/categories") || request()->is("admin/categories/*") ? "active" : "" }}">
+                                <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                                </i>
+                                {{ trans('cruds.category.title') }}
+                            </a>
+                        </li>
+                    @endcan
+                    @can('subcategory_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.subcategories.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/subcategories") || request()->is("admin/subcategories/*") ? "active" : "" }}">
+                                <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                                </i>
+                                {{ trans('cruds.subcategory.title') }}
+                            </a>
+                        </li>
+                    @endcan
+                    @can('product_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.products.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/products") || request()->is("admin/products/*") ? "active" : "" }}">
+                                <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                                </i>
+                                {{ trans('cruds.product.title') }}
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+        @endcan
         @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
             @can('profile_password_edit')
                 <li class="c-sidebar-nav-item">

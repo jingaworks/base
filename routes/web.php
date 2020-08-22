@@ -47,18 +47,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('certificates', 'CertificateController');
 
     // Categories
-    // Route::delete('categories/destroy', 'CategoryController@massDestroy')->name('categories.massDestroy');
-    // Route::resource('categories', 'CategoryController');
+    Route::delete('categories/destroy', 'CategoryController@massDestroy')->name('categories.massDestroy');
+    Route::resource('categories', 'CategoryController');
 
     // Subcategories
-    // Route::delete('subcategories/destroy', 'SubcategoryController@massDestroy')->name('subcategories.massDestroy');
-    // Route::resource('subcategories', 'SubcategoryController');
+    Route::delete('subcategories/destroy', 'SubcategoryController@massDestroy')->name('subcategories.massDestroy');
+    Route::resource('subcategories', 'SubcategoryController');
 
     // Products
-    // Route::delete('products/destroy', 'ProductController@massDestroy')->name('products.massDestroy');
-    // Route::post('products/media', 'ProductController@storeMedia')->name('products.storeMedia');
-    // Route::post('products/ckmedia', 'ProductController@storeCKEditorImages')->name('products.storeCKEditorImages');
-    // Route::resource('products', 'ProductController');
+    Route::delete('products/destroy', 'ProductController@massDestroy')->name('products.massDestroy');
+    Route::post('products/media', 'ProductController@storeMedia')->name('products.storeMedia');
+    Route::post('products/ckmedia', 'ProductController@storeCKEditorImages')->name('products.storeCKEditorImages');
+    Route::resource('products', 'ProductController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
 // Change password
