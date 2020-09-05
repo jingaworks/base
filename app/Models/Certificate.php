@@ -14,7 +14,6 @@ class Certificate extends Model
     public $table = 'certificates';
 
     protected $dates = [
-        'valid_year',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -40,16 +39,6 @@ class Certificate extends Model
     public function address()
     {
         return $this->belongsTo(Address::class, 'address_id');
-    }
-
-    public function getValidYearAttribute($value)
-    {
-        return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
-    }
-
-    public function setValidYearAttribute($value)
-    {
-        $this->attributes['valid_year'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
     public function profile()

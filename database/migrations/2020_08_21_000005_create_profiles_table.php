@@ -10,9 +10,9 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('phone')->unique();
+            $table->string('name');
+            $table->string('phone');
             $table->string('avatar')->nullable();
-            $table->string('name')->nullable();
             $table->timestamps();
         });
     }

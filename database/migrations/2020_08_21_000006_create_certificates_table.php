@@ -12,7 +12,7 @@ class CreateCertificatesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('serie')->unique();
-            $table->date('valid_year');
+            $table->string('valid_year');
             $table->timestamps();
         });
     }

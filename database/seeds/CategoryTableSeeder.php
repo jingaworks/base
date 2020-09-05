@@ -1,0 +1,30 @@
+<?php
+
+use App\Models\Category;
+use Illuminate\Database\Seeder;
+
+class CategoryTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $categorie = [
+            [
+                'id'    => 1,
+                'name' => 'Legume',
+                'slug' => 'legume',
+            ],
+            [
+                'id'    => 2,
+                'name' => 'Fructe',
+                'slug' => 'fructe',
+            ]
+        ];
+
+        Category::insert($categorie);
+    }
+}
